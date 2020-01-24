@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#main {
+    background: #2F4F4F;
+    width: 100%;
+    height: auto;
+    margin: auto
+}
+
+
+#project_name {
+    height: auto;
+    width: 100%;
+    background: #DAA520;
+
+}
+
+#navigationPanel {
+    height: 540px;
+    width: 20%;
+
+    background: #ADFF2F;
+    float: left;
+}
+
+#tasks {
+    height: 400px;
+    width: 80%;
+    float: left;
+    background: #C71585;
+}
+
+.task_name{
+    display: inline-block;
+    background: #2F4F4F;
+    border: 1px solid black;
+    width: 12.25%;
+    float: left;
+}
+
+#chat{
+    width: 80%;
+    height: 30%;
+    background: aqua;
+    float: left;
+}
+#tableContract{
+    table-layout: fixed;
+    width: 12.25%;
+    word-break: break-all;
+    margin: 1px 1px;
+}
+#tableContract1{
+    table-layout: fixed;
+    width: 12.25%;
+    word-break: break-all;
+    margin: 1px 1px;
+    overflow-scrolling: auto;
+}
+#tableContract2{
+    table-layout: fixed;
+    width: 12.25%;
+    word-break: break-all;
+    margin: 1px 1px;
+}
+#tableContract3{
+    table-layout: fixed;
+    width: 12.25%;
+    word-break: break-all;
+    margin: 1px 1px;
+    overflow: scroll;
+}
