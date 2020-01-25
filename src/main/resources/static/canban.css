@@ -1,76 +1,138 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin: 20px;
-}
-
-#main {
-    background: #2F4F4F;
-    width: 100%;
-    height: auto;
-    margin: auto
 }
 
 
 #project_name {
-    height: auto;
-    width: 100%;
-    background: #DAA520;
+    height: 40px;
+    width:  80%;
+    background: #dc79ff;
+    float: left;
+
 
 }
-
 #navigationPanel {
-    height: 540px;
-    width: 20%;
-
-    background: #ADFF2F;
+    height: 500px;
+    min-width:20%;
+    background: #b783ff;
     float: left;
+
 }
-
-#tasks {
-    height: 400px;
-    width: 80%;
-    float: left;
-    background: #C71585;
+#stage{
+   width: 80%;
+    height: 20px;
+    background: darkblue;
+    float:left;
 }
 
 .task_name{
     display: inline-block;
-    background: #2F4F4F;
+    background: #4d4f14;
     border: 1px solid black;
-    width: 12.25%;
+    width: 12.3%;
+    min-width: 12.3%;
     float: left;
 }
 
+#table{
+    max-width: 80%;
+    min-width: 80%;
+    height: 440px;
+    background: cyan;
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#taskColumn1 {
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+    max-height:450px;
+    table-layout: fixed;
+
+}
+#taskColumn2{
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+}
+#taskColumn3 {
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+
+}
+#taskColumn4{
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+}
+#taskColumn5 {
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+
+}
+#taskColumn6{
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+}
+
+#taskColumn7{
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    display: inline-block;
+    float: left;
+    background: aliceblue;
+}
+
+#taskColumn8{
+    width: 12.3%;
+    min-width: 12.3%;
+    word-break: break-all;
+    border: 1px solid black;
+    float: left;
+    background: aliceblue;
+
+}
 #chat{
     width: 80%;
-    height: 30%;
-    background: aqua;
-    float: left;
-}
-#tableContract{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-}
-#tableContract1{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-    overflow-scrolling: auto;
-}
-#tableContract2{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-}
-#tableContract3{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
+    background: cadetblue;
+    height: 100px;
+    float: right;
     overflow: scroll;
+
 }
+
+
+
+

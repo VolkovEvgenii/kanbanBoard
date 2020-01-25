@@ -3,30 +3,33 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="/static/canban.css">
-    <title>Kanban Board</title>
+    <link rel="stylesheet" type="text/css" href="canban.css">
+    <title> Kanban Board</title>
 </head>
 
 <body>
 
-<div id="main">
-    <div id="project_name">Название проекта
-        <select >
-            <option>Проект 1</option>
-            <option>Проект 2</option>
-            <option>Проект 3</option>
-            <option>Проект 4</option>
-        </select >
-    </div>
+
 
     <div id="navigationPanel">Навигационная панель
         <form id="button"> <p><input type="button" value=" Добавить проект ">
             <p><input type="button" value=" Добавить задачу "></p>
             <p> <input type="button" value=" Добавить ответственного "></p>
+            </form>
         </form>
+
     </div>
 
-    <div id="tasks">
+    <div id="project_name">Выбрать проект
+        <select >
+            <option> Проект 1 </option>
+            <option> Проект 2 </option>
+            <option> Проект 3 </option>
+            <option> Проект 4 </option>
+        </select >
+    </div>
+
+    <div id="stage">
         <div class="task_name">Контракт</div>
         <div class="task_name">Службы</div>
         <div class="task_name">ППР</div>
@@ -35,32 +38,74 @@
         <div class="task_name">Работы</div>
         <div class="task_name">Документация</div>
         <div class="task_name">Демобилизация</div>
-
-        <table id="tableContract" border="1px" align="left" width="12.1%" >
-            <tr>
-                <td> dhgddddddddddddddddddddddddddddddd</td>
-            </tr>
-            <tr>
-                <td> dhgddddddddddddddddddddddddddddddd</td>
-            </tr>
-        </table>
-
-        <table id="tableContract2" border="1px" align="left" width="12.1%">
-            <tr>
-                <td> dhgddddddddddddddddddddddddddddddd</td>
-            </tr>
-        </table>
-        <table id="tableContract3" border="1px" align="left" width="12.1%">
-            <tr>
-                <td> dhgdddddddddddddddgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdddddddddddddddd</td>
-            </tr>
-        </table>
-
-
     </div>
 
-    <div id = "chat">Чат</div>
+
+<div id="table">
+    <table id="taskColumn1">
+        <tr><td> Задача 1 ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ</td>
+        <tr><td> Задача 2</td><tr>
+        <tr><td> Задача 3</td><tr>
+        <tr><td> Задача 4</td></tr>
+        <tr><td> Задача 5</td><tr>
+        <tr><td> Задача 6</td><tr>
+        <tr><td> Задача 7</td><tr>
+        <tr><td> Задача 8</td><tr>
+        <tr><td> Задача 9</td><tr>
+        <tr><td> Задача 10</td><tr>
+        <tr><td> Задача 11</td><tr>
+        <tr><td> Задача 12</td><tr>
+        </table>
+
+
+        <table id="taskColumn2">
+            <tr>
+                <td> строка 1</td>
+            </tr>
+        </table>
+
+        <table id="taskColumn3" >
+            <tr>
+                <td> строка 1</td>
+            </tr>
+        </table>
+
+        <table id="taskColumn4">
+            <tr>
+                <td> строка 1</td>
+            </tr>
+        </table>
+
+        <table id="taskColumn5">
+                <tr>
+                    <td> строка 1</td>
+                </tr>
+        </table>
+
+        <table id="taskColumn6">
+            <tr>
+                <td> строка 1</td>
+            </tr>
+        </table>
+
+        <table id="taskColumn7">
+            <tr>
+                <td> строка 1</td>
+            </tr>
+        </table>
+
+        <table id="taskColumn8">
+            <tr>
+                <td> строка 1</td>
+            </tr>
+        </table>
 </div>
+    <div id = "chat">Чат</div>
+
+
+
+
+
 
 
 </body>
