@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: cadetblue;
+    margin: 90px;
+}
+
+#addProjectProjectName{
+    margin: 0px 0px 40px 0px;
+
+}
+
+#addProjectProjectStatus{
+margin: 0px 0px 40px 0px;
+
+}
+#add{
+
+}
+
+#AddProjectButtonAdd{
+    background: darkgrey;
+}

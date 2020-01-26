@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: cadetblue;
+}
+
+#addUser{
+    margin: 80px;
+
+}
+#addUserButton {
+    background: darkgrey;
+}

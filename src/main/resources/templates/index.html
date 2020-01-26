@@ -3,24 +3,22 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="canban.css">
-    <title> Kanban Board</title>
+    <link rel="stylesheet" type="text/css" href="Index.css">
+    <title> index </title>
 </head>
 
 <body>
 
-
-
-    <div id="navigationPanel">Навигационная панель
-        <form id="button"> <p><input type="button" value=" Добавить проект ">
-            <p><input type="button" value=" Добавить задачу "></p>
-            <p> <input type="button" value=" Добавить ответственного "></p>
+    <div id="indexNavigationPanel">Навигационная панель
+        <form id="button"> <p><input type="button" value=" Добавить проект " id="indexNavigationPanelButtonAddProject">
+            <p><input type="button" value=" Добавить задачу " id="indexNavigationPanelButtonAddTask"></p>
+            <p> <input type="button" value=" Добавить ответственного " id="indexNavigationPanelButtonAddUser"></p>
             </form>
         </form>
 
     </div>
 
-    <div id="project_name">Выбрать проект
+    <div id="indexProjectName">Выбрать проект
         <select >
             <option> Проект 1 </option>
             <option> Проект 2 </option>
@@ -29,7 +27,7 @@
         </select >
     </div>
 
-    <div id="stage">
+    <div id="indexProjectStage">
         <div class="task_name">Контракт</div>
         <div class="task_name">Службы</div>
         <div class="task_name">ППР</div>
@@ -41,7 +39,7 @@
     </div>
 
 
-<div id="table">
+<div id="indexTaskTable">
     <table id="taskColumn1">
         <tr><td> Задача 1 ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ</td>
         <tr><td> Задача 2</td><tr>
@@ -100,7 +98,8 @@
             </tr>
         </table>
 </div>
-    <div id = "chat">Чат</div>
+
+    <div id = "indexChat">Чат</div>
 
 
 

@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    background: cadetblue;
+    margin: 60px 0px 0px 200px;
+}
+
+#addTaskProjectName{
+  margin: 0px 0px 20px 0px;
+}
+#addTaskStage{
+    margin: 0px 0px 20px 0px;
+}
+#addTaskUser{
+    margin: 0px 0px 20px 0px;
+}
+#addTaskStatus{
+    margin: 0px 0px 20px 0px;
+}
+#addTaskPriority{
+    margin: 0px 0px 20px 0px;
+}
+#addTaskDateOfCreation{
+    margin: 0px 0px 20px 0px;
+}
+#addTaskExpirationDate{
+    margin: 0px 0px 20px 0px;
+}
+
+#addTaskInputFieldTask{
+    float: left;
+    width: 200px;
+    display: inline-block;
+
+}
+#addTaskTextArea{
+
+}
+#buttonAddTask{
+    background: darkgrey;
+    margin: 0px 0px 0px 575px;
+}
+
+
+
