@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "kanban_user")
 public class KanbanUser implements Serializable {
     @Id
     @GeneratedValue(generator = "increment")
@@ -36,5 +37,13 @@ public class KanbanUser implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Task> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(List<Task> taskList) {
+        this.taskList = taskList;
     }
 }

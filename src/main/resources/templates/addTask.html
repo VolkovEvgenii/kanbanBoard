@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="addTask.css">
+    <title> addTask </title>
+</head>
+<body>
+    <form method="post" th:action="@{/task/add}" th:object="${task}">
+        <p> Проект:
+            <select class="combo-box" name="projectId">
+                <option th:each="project : ${projects}"
+                        th:value="${project.id}"
+                        th:text="${project.description}"></option>
+            </select>
+        </p>
+        <p> Этап:
+            <select class="combo-box">
+                <option th:each="projectStage : ${T(ru.volkov.webApp.KanbanBoard.entity.ProjectStage).returnStages()}"
+                        th:value="${projectStage}"
+                        th:text="${projectStage.displayValue}">
+
+                </option>
+            </select>
+        </p>
+        <p> Ответственный:
+            <select class="combo-box" name="kanbanUserId">
+                <option th:each="kanbanUser : ${kanbanUsers}"
+                        th:value="${kanbanUser.id}"
+                        th:text="${kanbanUser.name}">
+                </option>
+            </select>
+        </p>
+        <p> Текуший статус:
+            <input type="checkbox" th:field="*{finished}">
+        </p>
+        <p> Приоритет:
+            <select class="combo-box">
+                <option th:each="taskImportance : ${T(ru.volkov.webApp.KanbanBoard.entity.TaskImportance).returnImportance()}"
+                        th:value="${taskImportance}"
+                        th:text="${taskImportance.displayValue}"></option>
+            </select>
+        </p>
+        <p> Дата создания:
+            <input type="datetime-local" th:field="*{startTask}">
+        </p>
+        <p> Дата окончания:
+            <input type="datetime-local" th:field="*{deadTask}">
+        </p>
+        <p> Описание:
+            <textarea cols="60" rows="10" th:field="*{description}"> </textarea>
+        </p>
+        <p>
+            <input type="submit" value=" Добавить ">
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    background: cadetblue;
+    margin: 60px 0px 0px 200px;
+}
+
+.combo-box {
+    width: 300px;
+}

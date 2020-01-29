@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="addProject.css">
+    <title>Добавить проект</title>
+</head>
+<body>
+    <div id="window-header">header</div>
+    <div id="main">
+        <form method="post" th:action="@{/project/add}" th:object="${project}">
+            <div>
+                <label>Название проекта</label>
+                <input type="text" th:field="*{description}" id="description">
+                <input type="checkbox" th:field="*{finished}">
+            </div>
+            <input type="submit" value="Сохранить">
+        </form>
+    </div>
+    <div id="footer">footer</div>
+</body>
+</html>

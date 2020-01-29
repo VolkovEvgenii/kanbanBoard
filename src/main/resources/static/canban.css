@@ -1,30 +1,26 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin: 20px;
+    margin: 0;
 }
-
 #main {
     background: #2F4F4F;
     width: 100%;
     height: auto;
     margin: auto
 }
-
-
 #project_name {
     height: auto;
     width: 100%;
     background: #DAA520;
 
 }
-
 #navigationPanel {
     height: 540px;
     width: 20%;
-
     background: #ADFF2F;
     float: left;
+    text-align: left;
 }
 
 #tasks {
@@ -33,14 +29,16 @@ body {
     float: left;
     background: #C71585;
 }
-
-.task_name{
-    display: inline-block;
-    background: #2F4F4F;
-    border: 1px solid black;
-    width: 12.25%;
-    float: left;
+.tasks__header {
+    width: 100%;
+    background: lightslategray;
 }
+
+.tasks__header td{
+    border-right: 1px #fff solid;
+    width: 12.5%;
+}
+
 
 #chat{
     width: 80%;
@@ -74,3 +72,57 @@ body {
     margin: 1px 1px;
     overflow: scroll;
 }
+
+/*
+a{text-decoration: none}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+!*Внешний вид меню*!
+
+.side {
+    width: 200px;
+    margin: 20px
+}
+
+.menu a{
+    background: #3d3d3d;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #666;
+    transition: 0.5s all;
+}
+
+.menu a:hover{
+    background: #666;
+    padding: 10px 0 10px 20px;
+}
+
+!*Всплывающие меню*!
+
+.menu__list{
+    position: relative;
+}
+
+.menu__drop{
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    top: -9999em;
+    opacity: 0;
+    border-left: 10px solid transparent;
+    transition: 0.5s opacity;
+}
+
+.menu__list:hover .menu__drop{
+    opacity: 1;
+    top: 0;
+}
+*/
+
+

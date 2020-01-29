@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="addKanbanUser.css">
+    <title>addUser</title>
+</head>
+<body>
+    <form method="post" th:action="@{/kanbanUser/add}" th:object="${kanbanUser}">
+        <div id="addUser"> Введите Ф.И.О. ответственного лица
+            <br> <br>
+            <input type="text" th:field="*{name}">
+            <input type="submit" value="Сохранить" id="addUserButton">
+        </div>
+    </form>
+</body>
+</html>
