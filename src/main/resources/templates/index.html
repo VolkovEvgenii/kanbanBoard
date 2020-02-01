@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,58 +7,144 @@
     <title>Kanban Board</title>
 </head>
 <body>
-<div id="main">
-    <div id="project_name">Название проекта
-        <select >
-            <option>Проект 1</option>
-            <option>Проект 2</option>
-            <option>Проект 3</option>
-            <option>Проект 4</option>
-        </select >
+<div id=main>
+    <div id="header">
+        <form method="post" th:action="@{/showAllTask}">
+            <select class=" " name="projectId">
+                <option value="" selected disabled hidden> Выберите проект</option>
+                <option th:each="project : ${projects}"
+                        th:value="${project.id}"
+                        th:text="${project.description}"></option>
+            </select >
+            <a href="/refreshCombo"> Обновить список</a>
+            <button type="submit"> Вывести </button>
+        </form>
     </div>
-
-    <div id="navigationPanel">Навигационная панель
-        <div class="side">
-            <ul class="menu">
-                <li class="menu__list"><a href="#">Проекты</a>
-                    <ul class="menu__drop">
-                        <li><a href="/project/add"> Добавить проект</a></li>
-                        <li><a href="#"> Вывести все проекты</a></li>
-                        <li><a href="#"> Удалить проект</a></li>
-                    </ul>
-                </li>
-                <li class="menu__list"><a href="#">Пользователи</a>
-                    <ul class="menu__drop">
-                        <li><a href="/kanbanUser/add"> Добавить пользователя</a></li>
-                        <li><a href="#"> Вывести всех пользователей</a></li>
-                        <li><a href="#"> Удалить пользователя</a></li>
-                    </ul>
-                </li>
-                <li class="menu__list"><a href="#">Задачи</a>
-                    <ul class="menu__drop">
-                        <li><a href="/task/add"> Добавить задачу</a></li>
-                        <li><a href="#"> Неоконченные задачи</a></li>
-                        <li><a href="#"> Все задачи</a></li>
-                        <li><a href="#"> Все задачи пользователя</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <div id="layout">layout
+        <div id="navigationPanel">
+            <div class="side">
+                <ul class="menu">
+                    <li class="menu__list"><a href="#">Проекты</a>
+                        <ul class="menu__drop">
+                            <li><a href="/project/add">Добавить</a></li>
+                            <li><a href="#">Вывести все</a></li>
+                            <li><a href="#">Удалить</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__list"><a href="#">Пользователи</a>
+                        <ul class="menu__drop">
+                            <li><a href="/kanbanUser/add"> Добавить</a></li>
+                            <li><a href="#">Вывести всех</a></li>
+                            <li><a href="#">Удалить</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__list"><a href="#">Задачи</a>
+                        <ul class="menu__drop">
+                            <li><a href="/task/add">Добавить задачу</a></li>
+                            <li><a href="#">Неоконченные</a></li>
+                            <li><a href="#">Вывести все</a></li>
+                            <li><a href="#">Все у пользователя</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="board">
+            <table class="taskTable" th:name="contractTable">
+                <thead>
+                <tr>
+                    <td>Контракт</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByContract}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="agreementTable">
+                <thead>
+                <tr>
+                    <td>Службы</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByAgreement}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="routingTable">
+                <thead>
+                <tr>
+                    <td>ППР</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByRouting}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="workTable">
+                <thead>
+                <tr>
+                    <td>Работы</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByWork}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="documentationTable">
+                <thead>
+                    <td>Документация</td>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByDocumentation}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="mob_demobTable">
+                <thead>
+                    <td>МОБ / ДЕМОБ</td>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByMob_Demob}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <div id="tasks">
-        <table class="tasks__header">
-            <tr>
-                <td>Контракт</td>
-                <td>Службы</td>
-                <td>ППР</td>
-                <td>Работы</td>
-                <td>Документация</td>
-                <td>Моб / Демоб</td>
-            </tr>
-        </table>
-    </div>
-    <div id = "chat">Чат</div>
+    <div id="footer">footer</div>
 </div>
 </body>
 </html>

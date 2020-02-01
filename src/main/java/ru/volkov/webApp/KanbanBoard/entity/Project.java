@@ -22,7 +22,6 @@ public class Project implements Serializable {
     private List<Task> taskList = new ArrayList<>();
 
     public Project() {
-
     }
 
     public int getId() {

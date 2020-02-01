@@ -15,8 +15,8 @@
             </select>
         </p>
         <p> Этап:
-            <select class="combo-box">
-                <option th:each="projectStage : ${T(ru.volkov.webApp.KanbanBoard.entity.ProjectStage).returnStages()}"
+            <select class="combo-box" th:field="*{stage}">
+                <option th:each="projectStage : ${projectStages}"
                         th:value="${projectStage}"
                         th:text="${projectStage.displayValue}">
 
@@ -35,8 +35,8 @@
             <input type="checkbox" th:field="*{finished}">
         </p>
         <p> Приоритет:
-            <select class="combo-box">
-                <option th:each="taskImportance : ${T(ru.volkov.webApp.KanbanBoard.entity.TaskImportance).returnImportance()}"
+            <select class="combo-box" th:field="*{importance}">
+                <option th:each="taskImportance : ${taskImportances}"
                         th:value="${taskImportance}"
                         th:text="${taskImportance.displayValue}"></option>
             </select>

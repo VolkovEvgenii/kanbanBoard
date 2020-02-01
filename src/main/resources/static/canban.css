@@ -1,128 +1,62 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
     margin: 0;
-}
-#main {
-    background: #2F4F4F;
-    width: 100%;
-    height: auto;
-    margin: auto
-}
-#project_name {
-    height: auto;
-    width: 100%;
-    background: #DAA520;
-
-}
-#navigationPanel {
-    height: 540px;
-    width: 20%;
-    background: #ADFF2F;
-    float: left;
-    text-align: left;
+    padding: 0;
 }
 
-#tasks {
-    height: 400px;
-    width: 80%;
-    float: left;
-    background: #C71585;
-}
-.tasks__header {
-    width: 100%;
-    background: lightslategray;
+#header {
+    background: #5e6073;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
-.tasks__header td{
-    border-right: 1px #fff solid;
-    width: 12.5%;
-}
-
-
-#chat{
-    width: 80%;
-    height: 30%;
-    background: aqua;
-    float: left;
-}
-#tableContract{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-}
-#tableContract1{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-    overflow-scrolling: auto;
-}
-#tableContract2{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-}
-#tableContract3{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-    overflow: scroll;
-}
-
-/*
-a{text-decoration: none}
-
-ul{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
-
-!*Внешний вид меню*!
-
-.side {
-    width: 200px;
-    margin: 20px
-}
-
-.menu a{
-    background: #3d3d3d;
-    color: #fff;
-    padding: 10px;
-    display: block;
-    border-bottom: 1px solid #666;
-    transition: 0.5s all;
-}
-
-.menu a:hover{
-    background: #666;
-    padding: 10px 0 10px 20px;
-}
-
-!*Всплывающие меню*!
-
-.menu__list{
+#layout {
     position: relative;
+    height: 80vh;
 }
 
-.menu__drop{
+#navigationPanel {
+    background: #b2d3be;
     position: absolute;
-    width: 100%;
-    left: 100%;
-    top: -9999em;
-    opacity: 0;
-    border-left: 10px solid transparent;
-    transition: 0.5s opacity;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 85%;
+    float: left;
 }
 
-.menu__list:hover .menu__drop{
-    opacity: 1;
-    top: 0;
+#board {
+    background: #f2f4d1;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 15%;
+    right: 0%;
+    float: left;
+    text-align: center;
 }
-*/
 
+.taskTable {
+    display: inline-table;
+    margin-top: 3px;
+    border-collapse: separate;
+    border: 1px solid #5e6073;
+    width: 16.2%;
+    font-size: 14px;
+}
+
+.taskTable thead {
+    background: #5e6073;
+    color: white;
+}
+
+TD TH {
+    border: 1px solid #5e6073;
+}
+
+#footer {
+    background: #89a3b2;
+    height: 10vh;
+}
 

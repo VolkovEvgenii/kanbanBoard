@@ -18,6 +18,7 @@ public class Task implements Serializable {
     @ManyToOne
     @JoinColumn
     private KanbanUser kanbanUser;
+
     @ManyToOne
     @JoinColumn
     private Project project;
@@ -29,8 +30,15 @@ public class Task implements Serializable {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime deadTask;
+
     private boolean finished;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "stage")
     private ProjectStage stage;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "importance")
     private TaskImportance importance;
 
     public Task() {

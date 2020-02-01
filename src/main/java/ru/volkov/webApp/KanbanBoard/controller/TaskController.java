@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.volkov.webApp.KanbanBoard.entity.KanbanUser;
-import ru.volkov.webApp.KanbanBoard.entity.Project;
-import ru.volkov.webApp.KanbanBoard.entity.Task;
+import ru.volkov.webApp.KanbanBoard.entity.*;
 import ru.volkov.webApp.KanbanBoard.repository.KanbanUserRepository;
 import ru.volkov.webApp.KanbanBoard.repository.ProjectRepository;
 import ru.volkov.webApp.KanbanBoard.repository.TaskRepository;
@@ -32,6 +30,8 @@ public class TaskController {
         model.addAttribute("task", new Task());
         model.addAttribute("projects", projectRepository.findAll());
         model.addAttribute("kanbanUsers", kanbanUserRepository.findAll());
+        model.addAttribute("projectStages", ProjectStage.values());
+        model.addAttribute("taskImportances", TaskImportance.values());
         return "addTask";
     }
 
