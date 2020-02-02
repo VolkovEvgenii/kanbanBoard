@@ -1,68 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="/static/canban.css">
+    <link rel="stylesheet" type="text/css" href="canban.css">
     <title>Kanban Board</title>
 </head>
-
 <body>
-
-<div id="main">
-    <div id="project_name">Название проекта
-        <select >
-            <option>Проект 1</option>
-            <option>Проект 2</option>
-            <option>Проект 3</option>
-            <option>Проект 4</option>
-        </select >
-    </div>
-
-    <div id="navigationPanel">Навигационная панель
-        <form id="button"> <p><input type="button" value=" Добавить проект ">
-            <p><input type="button" value=" Добавить задачу "></p>
-            <p> <input type="button" value=" Добавить ответственного "></p>
+<div id=main>
+    <div id="header">
+        <form method="post" th:action="@{/showAllTask}">
+            <select class=" " name="projectId">
+                <option value="" selected disabled hidden> Выберите проект</option>
+                <option th:each="project : ${projects}"
+                        th:value="${project.id}"
+                        th:text="${project.description}"></option>
+            </select >
+            <a href="/refreshCombo"> Обновить список</a>
+            <button type="submit"> Вывести </button>
         </form>
     </div>
-
-    <div id="tasks">
-        <div class="task_name">Контракт</div>
-        <div class="task_name">Службы</div>
-        <div class="task_name">ППР</div>
-        <div class="task_name">Материалы</div>
-        <div class="task_name">Мобилизация</div>
-        <div class="task_name">Работы</div>
-        <div class="task_name">Документация</div>
-        <div class="task_name">Демобилизация</div>
-
-        <table id="tableContract" border="1px" align="left" width="12.1%" >
-            <tr>
-                <td> dhgddddddddddddddddddddddddddddddd</td>
-            </tr>
-            <tr>
-                <td> dhgddddddddddddddddddddddddddddddd</td>
-            </tr>
-        </table>
-
-        <table id="tableContract2" border="1px" align="left" width="12.1%">
-            <tr>
-                <td> dhgddddddddddddddddddddddddddddddd</td>
-            </tr>
-        </table>
-        <table id="tableContract3" border="1px" align="left" width="12.1%">
-            <tr>
-                <td> dhgdddddddddddddddgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffdddddddddddddddd</td>
-            </tr>
-        </table>
-
-
+    <div id="layout">layout
+        <div id="navigationPanel">
+            <div class="side">
+                <ul class="menu">
+                    <li class="menu__list"><a href="#">Проекты</a>
+                        <ul class="menu__drop">
+                            <li><a href="/project/add">Добавить</a></li>
+                            <li><a href="#">Вывести все</a></li>
+                            <li><a href="#">Удалить</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__list"><a href="#">Пользователи</a>
+                        <ul class="menu__drop">
+                            <li><a href="/kanbanUser/add"> Добавить</a></li>
+                            <li><a href="#">Вывести всех</a></li>
+                            <li><a href="#">Удалить</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__list"><a href="#">Задачи</a>
+                        <ul class="menu__drop">
+                            <li><a href="/task/add">Добавить задачу</a></li>
+                            <li><a href="#">Неоконченные</a></li>
+                            <li><a href="#">Вывести все</a></li>
+                            <li><a href="#">Все у пользователя</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="board">
+            <table class="taskTable" th:name="contractTable">
+                <thead>
+                <tr>
+                    <td>Контракт</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByContract}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="agreementTable">
+                <thead>
+                <tr>
+                    <td>Службы</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByAgreement}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="routingTable">
+                <thead>
+                <tr>
+                    <td>ППР</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByRouting}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="workTable">
+                <thead>
+                <tr>
+                    <td>Работы</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByWork}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="documentationTable">
+                <thead>
+                    <td>Документация</td>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByDocumentation}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="taskTable" th:name="mob_demobTable">
+                <thead>
+                    <td>МОБ / ДЕМОБ</td>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasksByMob_Demob}">
+                    <td th:utext="
+                    ${task.description} + '</br>' +
+                    ${task.kanbanUser.name} + '</br>' + 'c: ' +
+                    ${task.getStartTask()} + '</br>' + 'до: ' +
+                    ${task.getDeadTask()} + '</br>' + '-------------'"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-    <div id = "chat">Чат</div>
+    <div id="footer">footer</div>
 </div>
-
-
 </body>
-
 </html>

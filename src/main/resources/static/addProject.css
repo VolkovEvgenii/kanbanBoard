@@ -1,0 +1,18 @@
+#window-header {
+    background: lightskyblue;
+    height: 20vh;
+    margin: 0;
+}
+
+#main {
+    background: lightslategray;
+    height: 60vh;
+    text-align: center;
+    margin: 0;
+}
+
+#footer {
+    background: lightseagreen;
+    height: 20vh;
+    margin: 0;
+}

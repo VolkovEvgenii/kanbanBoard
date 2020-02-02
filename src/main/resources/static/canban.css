@@ -1,76 +1,62 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background: #5e6073;
+    height: 10vh;
+    display: flex;
+    align-items: center;
     text-align: center;
-    margin: 20px;
 }
 
-#main {
-    background: #2F4F4F;
-    width: 100%;
-    height: auto;
-    margin: auto
-}
-
-
-#project_name {
-    height: auto;
-    width: 100%;
-    background: #DAA520;
-
+#layout {
+    position: relative;
+    height: 80vh;
 }
 
 #navigationPanel {
-    height: 540px;
-    width: 20%;
-
-    background: #ADFF2F;
+    background: #b2d3be;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 85%;
     float: left;
 }
 
-#tasks {
-    height: 400px;
-    width: 80%;
+#board {
+    background: #f2f4d1;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 15%;
+    right: 0%;
     float: left;
-    background: #C71585;
+    text-align: center;
 }
 
-.task_name{
-    display: inline-block;
-    background: #2F4F4F;
-    border: 1px solid black;
-    width: 12.25%;
-    float: left;
+.taskTable {
+    display: inline-table;
+    margin-top: 3px;
+    border-collapse: separate;
+    border: 1px solid #5e6073;
+    width: 16.2%;
+    font-size: 14px;
 }
 
-#chat{
-    width: 80%;
-    height: 30%;
-    background: aqua;
-    float: left;
+.taskTable thead {
+    background: #5e6073;
+    color: white;
 }
-#tableContract{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
+
+TD TH {
+    border: 1px solid #5e6073;
 }
-#tableContract1{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-    overflow-scrolling: auto;
+
+#footer {
+    background: #89a3b2;
+    height: 10vh;
 }
-#tableContract2{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-}
-#tableContract3{
-    table-layout: fixed;
-    width: 12.25%;
-    word-break: break-all;
-    margin: 1px 1px;
-    overflow: scroll;
-}
+

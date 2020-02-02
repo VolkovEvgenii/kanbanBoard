@@ -1,12 +1,14 @@
 package ru.volkov.webApp.KanbanBoard.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
+@Table (name = "task")
 public class Task implements Serializable {
     @Id
     @GeneratedValue (generator = "increment")
@@ -16,15 +18,27 @@ public class Task implements Serializable {
     @ManyToOne
     @JoinColumn
     private KanbanUser kanbanUser;
+
     @ManyToOne
     @JoinColumn
     private Project project;
 
     private String description;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime startTask;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime deadTask;
-    private boolean isFinished;
+
+    private boolean finished;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "stage")
     private ProjectStage stage;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "importance")
     private TaskImportance importance;
 
     public Task() {
@@ -64,11 +78,11 @@ public class Task implements Serializable {
     }
 
     public boolean isFinished() {
-        return isFinished;
+        return finished;
     }
 
     public void setFinished(boolean finished) {
-        isFinished = finished;
+        this.finished = finished;
     }
 
     public KanbanUser getKanbanUser() {

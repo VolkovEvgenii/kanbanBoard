@@ -2,12 +2,25 @@ package ru.volkov.webApp.KanbanBoard.entity;
 
 public enum ProjectStage {
     //Этапы проекта
-    CONTRACT,       //Рабочие этапы по договору
-    AGREEMENT,      //Различные согласования
-    ROUTING,        //Работа на проектной документацией
-    MATERIAL,       //Работа над закупками материалов
-    MOBILIZATION,   //Мобилизация на объект
-    WORK,           //Работы на объекте
-    DOCUMENTATION,  //Исполнительная документация
-    DEMOBILIZATION  //Демобилизация с объекта
+    CONTRACT ("Контракт"),       //Рабочие этапы по договору
+    AGREEMENT ("Согласования"),      //Различные согласования
+    ROUTING ("Организация и технология"),        //Работа на проектной документацией
+    WORK ("Работа на объекте"),           //Работы на объекте
+    DOCUMENTATION ("Документация"),  //Исполнительная документация
+    MOB_DEMOB ("Мобилизация / Демобилизация"); //Демобилизация с объекта
+
+    private final String displayValue;
+
+    ProjectStage (String displayValue) {
+        this.displayValue = displayValue;
+    }
+
+    public String getDisplayValue () {
+        return displayValue;
+    }
+
+    public static ProjectStage[] returnStages() {
+        return ProjectStage.values();
+    }
 }
+
